@@ -64,8 +64,7 @@ bindsym $mod+F3 exec pcmanfm
 bindsym $mod+Shift+F3 exec pcmanfm_pkexec
 bindsym $mod+F5 exec terminal -e 'mocp'
 bindsym $mod+t exec --no-startup-id pkill picom
-#bindsym $mod+Ctrl+t exec --no-startup-id picom -b
-bindsym $mod+Ctrl+t exec --no-startup-id picom --experimental-backends
+bindsym $mod+Ctrl+t exec --no-startup-id picom -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
@@ -338,14 +337,14 @@ bar {
 #	strip_workspace_numbers yes
 
    colors {
-        background #222D31
+        background #282a36
         statusline #F9FAF9
         separator  #454947
 
 #                     border  backgr. text
-        focused_workspace  #F9FAF9 #1165aa #FFFFFF
+        focused_workspace  #268BD2 #282a36 #FFFFFF
         active_workspace   #595B5B #353836 #FDF6E3
-        inactive_workspace #595B5B #222D31 #EEE8D5
+        inactive_workspace #282a36 #222D31 #EEE8D5
         binding_mode       #16a085 #2C2C2C #F9FAF9
         urgent_workspace   #16a085 #FDF6E3 #E5201D
     }
@@ -428,3 +427,4 @@ exec_always "setxkbmap -option 'grp:alt_shift_toggle' -layout us,bg -variant ,ph
 bindsym $mod+m exec xrandr --output eDP-1 --off 
 bindsym $mod+Shift+m exec xrandr --output eDP-1 --auto --output "DP-2" --left-of "eDP-1" 
 exec_always xrandr --output "eDP-1" --auto --output "DP-1" --left-of "eDP-1"
+exec_always xrandr --output "DP-1" --primary
